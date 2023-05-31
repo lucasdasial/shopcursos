@@ -1,8 +1,3 @@
-<?php
-
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,19 +60,66 @@
                 <a href=\"./buy.php/?id=$c[0]\">
                 <button>🛍️ Comprar</button>
                 </a>
-                <a href=\"./cart.php\">
-                <button class='card__add-cart'>🛒 ADD carrinho</button>
-                </a>
+                <button onclick=\"addOnCart($c[0], '$c[1]',$c[2])\" id='add-on-cart' class='card__add-cart'>🛒 ADD carrinho</button>
+                
             </div>";
         };
-
-
-
         ?>
 
-
-
     </main>
+
+    <script>
+    function showSuccess() {
+        alert('Adicionado ao carrinho')
+    }
+
+    function addOnCart(id, name, price) {
+
+
+        let newItem = {
+            quantity: 1,
+            id: id,
+            name: name,
+            price: price,
+        }
+
+        let list = []
+
+        let listInMemory = JSON.parse(localStorage.getItem('cardList'))
+
+
+        if (listInMemory) {
+
+            list = [...listInMemory]
+
+            let itemExisting = list.find(item => item.id == id)
+
+            if (itemExisting) {
+
+                itemExisting.quantity = itemExisting.quantity + 1
+
+                localStorage.setItem('cardList', JSON.stringify(list))
+                showSuccess()
+                return
+            }
+
+            list.push(newItem)
+            localStorage.setItem('cardList', JSON.stringify(list))
+            showSuccess(showSuccess)
+
+        } else {
+
+            list.push(newItem)
+            localStorage.setItem('cardList', JSON.stringify(list))
+            showSuccess()
+        }
+
+
+
+
+
+    }
+    </script>
 
 </body>
 
