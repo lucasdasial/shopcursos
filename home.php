@@ -75,8 +75,12 @@
                 <img class='card__img' src=\"$c[3]\"/>
                 <p>$c[1]</p>
                 <p class='card__price'> R$ $c[2]</p>
+                <a href=\"./buy.php/?id=$c[0]\">
                 <button>🛍️ Comprar</button>
+                </a>
+                <a href=\"./cart.php\">
                 <button class='card__add-cart'>🛒 ADD carrinho</button>
+                </a>
             </div>";
         };
 

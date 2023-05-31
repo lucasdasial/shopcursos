@@ -47,38 +47,34 @@
                     }
                 }
             };
-
-
-
             ?>
         </p>
 
         <button type="submit">Cadastrar</button>
         <a href="./login.php">Ja possuo conta</a>
     </form>
-    <lottie-player class="lottie" src="https://assets2.lottiefiles.com/packages/lf20_uhdM1CSwYf.json"
-        background="transparent" speed="1" style="width: 300px; height: 300px;" autoplay></lottie-player>
+    <lottie-player class="lottie" src="https://assets2.lottiefiles.com/packages/lf20_uhdM1CSwYf.json" background="transparent" speed="1" style="width: 300px; height: 300px;" autoplay></lottie-player>
 
 </body>
 
 
 <style>
-body {
-    flex-direction: row;
-    gap: 32px
-}
-
-@media (max-width:768px) {
-
-    .lottie {
-        display: none;
+    body {
+        flex-direction: row;
+        gap: 32px
     }
 
-}
+    @media (max-width:768px) {
 
-.msg {
-    color: red;
-}
+        .lottie {
+            display: none;
+        }
+
+    }
+
+    .msg {
+        color: red;
+    }
 </style>
 
 </html>
