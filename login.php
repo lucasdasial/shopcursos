@@ -74,6 +74,7 @@ if ($finds == 1) {
         flex-direction: row;
         gap: 32px;
         background-color: #fff;
+        padding: 12px;
     }
 
     main {
@@ -88,7 +89,7 @@ if ($finds == 1) {
         padding: 24px;
         background-color: #f1f1f1;
 
-        border-radius: 12px;
+        border-radius: 24px;
         box-shadow: rgb(155, 155, 155) 6px 6px 6px;
     }
 
@@ -103,6 +104,11 @@ if ($finds == 1) {
 
         .lottie {
             display: none;
+        }
+
+        main {
+            background-color: #fff;
+            box-shadow: none
         }
 
     }

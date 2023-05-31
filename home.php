@@ -20,7 +20,7 @@
     <header>
         <div class="content  content__header">
             <h2>Shop cursos 📚</h2>
-            <p>
+            <p class="welcome">
                 Bem-vindo,
 
 
@@ -37,20 +37,7 @@
 
             </p>
             <div class="options">
-
-                <?php
-
-                if (!isset($_SESSION)) {
-                    session_start();
-                }
-
-
-                if ($_SESSION['username'] == 'admin') {
-                    echo "<a href=\"./dashboard.php\">➕ dashboard</a>";
-                }
-
-                ?>
-
+                <a href="./cart.php">🛒 Carrinho</a>
                 <a href="./middleware/logout.php">👋 sair</a>
             </div>
 
@@ -95,73 +82,90 @@
 </body>
 
 <style>
-    body {
-        justify-content: flex-start;
-        padding: 0;
+body {
+    justify-content: flex-start;
+    padding: 0;
+
+    height: 100%;
+}
+
+header {
+    background-color: #fff;
+    width: 100%;
+}
+
+.content {
+    max-width: 1400px;
+    width: 100%;
+    padding: 24px;
+    margin: auto;
+
+}
+
+.content__header {
+
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.content__main {
+    background-color: #e4e4e4;
+    display: flex;
+
+    height: 100%;
+
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.card {
+    max-width: 23.5%;
+    min-width: 250px;
+    width: 100%;
+
+    padding: 12px;
+    margin: 8px;
+    border-radius: 12px;
+
+    background-color: #fff;
+}
+
+.card__img {
+    width: 100%;
+
+}
+
+.card__price {
+    font-size: 34px;
+    font-weight: bold;
+}
+
+.card__add-cart {
+    background-color: transparent;
+    border: 2px solid #dfc329;
+    color: grey;
+}
+
+.options {
+    display: flex;
+    gap: 18px;
+}
+
+@media (max-width:768px) {
+
+    .welcome {
+        display: none;
     }
 
-    header {
-        background-color: #fff;
-        width: 100%;
+    h1,
+    h2,
+    p,
+    a {
+        font-size: 12px;
     }
-
-    .content {
-        max-width: 1400px;
-        width: 100%;
-        padding: 24px;
-        margin: auto;
-
-    }
-
-    .content__header {
-
-        display: flex;
-        justify-content: space-between;
-
-    }
-
-    .content__main {
-        background-color: #e4e4e4;
-        height: 100%;
-        display: flex;
-
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: flex-start;
-    }
-
-    .card {
-        max-width: 23.5%;
-        min-width: 250px;
-        width: 100%;
-
-        padding: 12px;
-        margin: 8px;
-        border-radius: 12px;
-
-        background-color: #fff;
-    }
-
-    .card__img {
-        width: 100%;
-
-    }
-
-    .card__price {
-        font-size: 34px;
-        font-weight: bold;
-    }
-
-    .card__add-cart {
-        background-color: transparent;
-        border: 2px solid #dfc329;
-        color: grey;
-    }
-
-    .options {
-        display: flex;
-        gap: 18px;
-    }
+}
 </style>
 
 </html>

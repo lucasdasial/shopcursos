@@ -49,121 +49,129 @@
 
 
         <script>
-            let cepInput = document.querySelector("#cep")
-            let total = document.querySelector("#total")
-            let btnCalcFrete = document.querySelector("#calc-frete")
-            let msg = document.querySelector("#result")
+        let cepInput = document.querySelector("#cep")
+        let total = document.querySelector("#total")
+        let btnCalcFrete = document.querySelector("#calc-frete")
+        let msg = document.querySelector("#result")
 
-            btnCalcFrete.addEventListener('click', () => {
-                fetch(`https://viacep.com.br/ws/${cepInput.value}/json/`)
-                    .then(response => response.json())
-                    .then(result => {
+        btnCalcFrete.addEventListener('click', () => {
+            fetch(`https://viacep.com.br/ws/${cepInput.value}/json/`)
+                .then(response => response.json())
+                .then(result => {
 
-                        total.classList.remove('hidden')
+                    total.classList.remove('hidden')
 
-                        msg.innerHTML =
-                            ` RS 13,99 para ${result.logradouro}, ${result.bairro} - ${result.localidade}`
-                    })
+                    msg.innerHTML =
+                        ` RS 13,99 para ${result.logradouro}, ${result.bairro} - ${result.localidade}`
+                })
 
-            })
+        })
         </script>
     </main>
 
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
 
-            font-family: 'Poppins', sans-serif;
-            font-size: 18px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 18px;
 
-            transition: 0.3s;
-        }
+        transition: 0.3s;
+    }
 
-        .hidden {
-            visibility: hidden;
-        }
+    .hidden {
+        visibility: hidden;
+    }
 
-        a {
-            text-decoration: none;
+    a {
+        text-decoration: none;
 
-        }
+    }
 
-        input,
-        button {
-            width: 100%;
-            height: 50px;
-        }
+    input,
+    button {
+        width: 100%;
+        height: 50px;
+    }
 
-        input {
+    input {
 
-            padding-left: 16px;
+        padding-left: 16px;
 
-        }
+    }
 
-        button {
+    button {
 
-            cursor: pointer;
-            margin-top: 18px;
-            border-radius: 18px;
+        cursor: pointer;
+        margin-top: 18px;
+        border-radius: 18px;
 
-            border: none;
+        border: none;
 
-            background-color: #dfc329;
-            color: white
-        }
+        background-color: #dfc329;
+        color: white
+    }
 
 
-        button:hover {
-            filter: brightness(1.1);
-            transform: translate(-8px, -8px);
+    button:hover {
+        filter: brightness(1.1);
+        transform: translate(-8px, -8px);
 
-        }
+    }
 
-        body {
-            width: 100vw;
-            height: 100vh;
-            background-color: #f2f2f2;
+    body {
+        width: 100vw;
+        height: 100vh;
+        background-color: #f2f2f2;
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-        .card {
+    .card {
 
-            width: 700px;
+        max-width: 700px;
+        width: 100%;
 
-            padding: 12px;
-            margin: 8px;
-            border-radius: 12px;
+        padding: 16px;
 
-            background-color: #fff;
-        }
+        border-radius: 12px;
+
+        background-color: #fff;
+    }
+
+    .card__header {
+        display: flex;
+        gap: 12px;
+    }
+
+    .card__img {
+        background-color: #f2f2f2;
+        width: 50%;
+
+    }
+
+    .card__price {
+        font-size: 34px;
+        font-weight: bold;
+    }
+
+    #calc-frete {
+        margin-bottom: 16px;
+    }
+
+    @media (max-width:768px) {
 
         .card__header {
-            display: flex;
-            gap: 12px;
+            flex-direction: column;
         }
-
-        .card__img {
-            background-color: #f2f2f2;
-            width: 50%;
-
-        }
-
-        .card__price {
-            font-size: 34px;
-            font-weight: bold;
-        }
-
-        #calc-frete {
-            margin-bottom: 16px;
-        }
+    }
     </style>
 
 </body>

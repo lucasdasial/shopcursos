@@ -104,8 +104,7 @@ a{
 
 @media (max-width:768px) {
 
-    .lottie{
-        display: none;
+    html{
+        font-size: 10px;
     }
-    
 }
