@@ -48,33 +48,63 @@ if ($finds == 1) {
 </head>
 
 <body>
-    <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_gzexbdcx.json" background="transparent" speed="1"
-        style="width: 300px; height: 300px;" autoplay></lottie-player>
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+    <main>
+        <lottie-player class="lottie" src="https://assets7.lottiefiles.com/packages/lf20_gzexbdcx.json"
+            background="transparent" speed="1" style="width: 300px; height: 300px;" autoplay></lottie-player>
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
 
-        <h2>Shop Cursos</h2>
-        <p>Login 📚</p>
-        <input placeholder="Usuário" name="username" type="text" required>
-        <input placeholder="Senha" name="password" type="password" required>
+            <h2>Shop Cursos</h2>
+            <p>Login 📚</p>
+            <input placeholder="Usuário" name="username" type="text" required>
+            <input placeholder="Senha" name="password" type="password" required>
 
-        <button type="submit">Entrar</button>
-        <a href="./register.php">Cadastrar</a>
-        <i class="error-msg">
+            <button type="submit">Entrar</button>
+            <a href="./register.php">Cadastrar</a>
+            <i class="error-msg">
 
-            <?php
+                <?php
                 echo $msg
                 ?>
-        </i>
-    </form>
+            </i>
+        </form>
+    </main>
 
     <style>
     body {
         flex-direction: row;
         gap: 32px;
+        background-color: #fff;
     }
+
+    main {
+
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        max-width: 800px;
+        height: 600px;
+        width: 100%;
+        padding: 24px;
+        background-color: #f1f1f1;
+
+        border-radius: 12px;
+        box-shadow: rgb(155, 155, 155) 6px 6px 6px;
+    }
+
+
 
     .error-msg {
         color: red;
+    }
+
+
+    @media (max-width:768px) {
+
+        .lottie {
+            display: none;
+        }
+
     }
     </style>
 
